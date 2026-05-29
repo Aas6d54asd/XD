@@ -1,0 +1,80 @@
+﻿# ================== NASTAVENÍ ==================
+$GifUrl = "https://media.tenor.com/T-GJmpztYA4AAAAM/son-folk.gif"
+
+$PocetOken = 25              # ← Kolik oken chceš (doporučuji 5-12)
+$Sirka = 235
+$Vyska = 270
+$Rychlost = 1              # Základní rychlost (vyšší = rychlejší)
+
+# ===============================================
+
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+
+$forms = @()
+$timers = @()
+
+for ($i = 1; $i -le $PocetOken; $i++) {
+
+    $form = New-Object System.Windows.Forms.Form
+    $form.Text = " "
+    $form.Size = New-Object System.Drawing.Size($Sirka, $Vyska)
+    $form.StartPosition = "Manual"
+    $form.FormBorderStyle = "None"
+    $form.TopMost = $true
+    $form.BackColor = [System.Drawing.Color]::Black
+    $form.TransparencyKey = [System.Drawing.Color]::Black
+    $form.ShowInTaskbar = $false
+
+    # WebBrowser s GIFem
+    $wb = New-Object System.Windows.Forms.WebBrowser
+    $wb.Size = $form.ClientSize
+    $wb.ScrollBarsEnabled = $false
+    $wb.IsWebBrowserContextMenuEnabled = $false
+    $wb.Navigate($GifUrl)
+    $form.Controls.Add($wb)
+
+    # Náhodná počáteční pozice
+    $screen = [System.Windows.Forms.Screen]::PrimaryScreen.WorkingArea
+    $form.Left = Get-Random -Minimum 0 -Maximum ($screen.Width - $Sirka)
+    $form.Top  = Get-Random -Minimum 0 -Maximum ($screen.Height - $Vyska)
+
+    # Náhodný směr (pro přirozenější pohyb)
+    $directionX = if ((Get-Random -Minimum 0 -Maximum 2) -eq 0) { -$Rychlost } else { $Rychlost }
+    $directionY = if ((Get-Random -Minimum 0 -Maximum 2) -eq 0) { -$Rychlost } else { $Rychlost }
+
+    # Timer pro toto okno
+    $timer = New-Object System.Windows.Forms.Timer
+    $timer.Interval = 25
+
+    $timer.Add_Tick({
+        $newX = $form.Left + $directionX
+        $newY = $form.Top + $directionY
+
+        # Bounce (odraz) od hranic
+        if ($newX -le 0 -or $newX + $form.Width -ge $screen.Width) {
+            $directionX = -$directionX
+        }
+        if ($newY -le 0 -or $newY + $form.Height -ge $screen.Height) {
+            $directionY = -$directionY
+        }
+
+        $form.Left = $newX
+        $form.Top = $newY
+    }.GetNewClosure())   # důležité pro zachování proměnných
+
+    $forms += $form
+    $timers += $timer
+}
+
+# Spuštění všech oken a timerů
+foreach ($form in $forms) {
+    $form.Show()
+}
+
+foreach ($timer in $timers) {
+    $timer.Start()
+}
+
+# Držení skriptu běžícího
+$null = [System.Windows.Forms.Application]::Run()
