@@ -1,7 +1,7 @@
 ﻿# ================== NASTAVENÍ ==================
 $GifUrl = "https://media.tenor.com/T-GJmpztYA4AAAAM/son-folk.gif"
 
-$PocetOken = 25              # ← Kolik oken chceš (doporučuji 5-12)
+$PocetOken = 50              # ← Kolik oken chceš (doporučuji 5-12)
 $Sirka = 235
 $Vyska = 270
 $Rychlost = 1              # Základní rychlost (vyšší = rychlejší)
