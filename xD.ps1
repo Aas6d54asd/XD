@@ -1,10 +1,10 @@
 ﻿# ================== NASTAVENÍ ==================
 $GifUrl = "https://media.tenor.com/T-GJmpztYA4AAAAM/son-folk.gif"
 
-$PocetOken = 50              # ← Kolik oken chceš (doporučuji 5-12)
+$PocetOken = 500
 $Sirka = 235
 $Vyska = 270
-$Rychlost = 1              # Základní rychlost (vyšší = rychlejší)
+$Rychlost = 1
 
 # ===============================================
 
@@ -26,7 +26,6 @@ for ($i = 1; $i -le $PocetOken; $i++) {
     $form.TransparencyKey = [System.Drawing.Color]::Black
     $form.ShowInTaskbar = $false
 
-    # WebBrowser s GIFem
     $wb = New-Object System.Windows.Forms.WebBrowser
     $wb.Size = $form.ClientSize
     $wb.ScrollBarsEnabled = $false
@@ -34,16 +33,13 @@ for ($i = 1; $i -le $PocetOken; $i++) {
     $wb.Navigate($GifUrl)
     $form.Controls.Add($wb)
 
-    # Náhodná počáteční pozice
     $screen = [System.Windows.Forms.Screen]::PrimaryScreen.WorkingArea
     $form.Left = Get-Random -Minimum 0 -Maximum ($screen.Width - $Sirka)
     $form.Top  = Get-Random -Minimum 0 -Maximum ($screen.Height - $Vyska)
 
-    # Náhodný směr (pro přirozenější pohyb)
     $directionX = if ((Get-Random -Minimum 0 -Maximum 2) -eq 0) { -$Rychlost } else { $Rychlost }
     $directionY = if ((Get-Random -Minimum 0 -Maximum 2) -eq 0) { -$Rychlost } else { $Rychlost }
 
-    # Timer pro toto okno
     $timer = New-Object System.Windows.Forms.Timer
     $timer.Interval = 25
 
@@ -61,13 +57,12 @@ for ($i = 1; $i -le $PocetOken; $i++) {
 
         $form.Left = $newX
         $form.Top = $newY
-    }.GetNewClosure())   # důležité pro zachování proměnných
+    }.GetNewClosure())
 
     $forms += $form
     $timers += $timer
 }
 
-# Spuštění všech oken a timerů
 foreach ($form in $forms) {
     $form.Show()
 }
@@ -76,5 +71,4 @@ foreach ($timer in $timers) {
     $timer.Start()
 }
 
-# Držení skriptu běžícího
 $null = [System.Windows.Forms.Application]::Run()
