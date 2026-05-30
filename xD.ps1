@@ -1,12 +1,10 @@
-﻿# ================== NASTAVENÍ ==================
-$GifUrl = "https://media.tenor.com/T-GJmpztYA4AAAAM/son-folk.gif"
+﻿$GifUrl = "https://media.tenor.com/T-GJmpztYA4AAAAM/son-folk.gif"
 
 $PocetOken = 80
 $Sirka = 235
 $Vyska = 270
 $Rychlost = 1
 
-# ===============================================
 
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
