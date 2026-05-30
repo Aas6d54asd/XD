@@ -1,7 +1,7 @@
 ﻿# ================== NASTAVENÍ ==================
 $GifUrl = "https://media.tenor.com/T-GJmpztYA4AAAAM/son-folk.gif"
 
-$PocetOken = 5
+$PocetOken = 80
 $Sirka = 235
 $Vyska = 270
 $Rychlost = 1
