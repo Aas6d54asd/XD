@@ -1,7 +1,7 @@
 ﻿# ================== NASTAVENÍ ==================
 $GifUrl = "https://media.tenor.com/T-GJmpztYA4AAAAM/son-folk.gif"
 
-$PocetOken = 10
+$PocetOken = 80
 $Sirka = 235
 $Vyska = 270
 $Rychlost = 1
@@ -41,7 +41,7 @@ for ($i = 1; $i -le $PocetOken; $i++) {
     $directionY = if ((Get-Random -Minimum 0 -Maximum 2) -eq 0) { -$Rychlost } else { $Rychlost }
 
     $timer = New-Object System.Windows.Forms.Timer
-    $timer.Interval = 300
+    $timer.Interval = 1
 
     $timer.Add_Tick({
         $newX = $form.Left + $directionX
