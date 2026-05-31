@@ -1,4 +1,4 @@
-﻿$GifUrl = "https://media.tenor.com/MQbOJe9bwbkAAAAM/patrick-star-dumb-founded.gif"
+$GifUrl = "https://media.tenor.com/T-GJmpztYA4AAAAM/son-folk.gif"
 
 $PocetOken = 50
 $Sirka = 235
@@ -39,13 +39,12 @@ for ($i = 1; $i -le $PocetOken; $i++) {
     $directionY = if ((Get-Random -Minimum 0 -Maximum 2) -eq 0) { -$Rychlost } else { $Rychlost }
 
     $timer = New-Object System.Windows.Forms.Timer
-    $timer.Interval = 1
+    $timer.Interval = 15
 
     $timer.Add_Tick({
         $newX = $form.Left + $directionX
         $newY = $form.Top + $directionY
 
-        # Bounce (odraz) od hranic
         if ($newX -le 0 -or $newX + $form.Width -ge $screen.Width) {
             $directionX = -$directionX
         }
