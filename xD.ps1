@@ -1,4 +1,4 @@
-﻿$GifUrl = "https://media.tenor.com/T-GJmpztYA4AAAAM/son-folk.gif"
+﻿$GifUrl = "https://media.tenor.com/MQbOJe9bwbkAAAAM/patrick-star-dumb-founded.gif"
 
 $PocetOken = 80
 $Sirka = 235
