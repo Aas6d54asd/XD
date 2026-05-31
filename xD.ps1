@@ -1,4 +1,4 @@
-$GifUrl = "https://media.tenor.com/T-GJmpztYA4AAAAM/son-folk.gif"
+$GifUrl = "https://i.giphy.com/ijEySbU7CQ4mhljmp6.webp"
 
 $PocetOken = 50
 $Sirka = 235
