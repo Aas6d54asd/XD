@@ -1,6 +1,6 @@
 ﻿$GifUrl = "https://media.tenor.com/MQbOJe9bwbkAAAAM/patrick-star-dumb-founded.gif"
 
-$PocetOken = 80
+$PocetOken = 50
 $Sirka = 235
 $Vyska = 270
 $Rychlost = 1
