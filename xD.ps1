@@ -1,6 +1,6 @@
 $GifUrl = "https://c.tenor.com/z7NNejkAOGcAAAAd/tenor.gif"
 
-$PocetOken = 50
+$PocetOken = 25
 $Sirka = 290
 $Vyska = 290
 $Rychlost = 1
