@@ -1,8 +1,8 @@
-$GifUrl = "https://i.giphy.com/ijEySbU7CQ4mhljmp6.webp"
+$GifUrl = "https://c.tenor.com/slYdZDXvdM4AAAAd/tenor.gif"
 
 $PocetOken = 50
-$Sirka = 235
-$Vyska = 270
+$Sirka = 200
+$Vyska = 200
 $Rychlost = 1
 
 
