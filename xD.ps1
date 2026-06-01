@@ -1,8 +1,8 @@
-$GifUrl = "https://media.tenor.com/T-GJmpztYA4AAAAM/son-folk.gif"
+$GifUrl = "https://raw.githubusercontent.com/Aas6d54asd/XD/refs/heads/main/angrybird.gif"
 
 $PocetOken = 70
-$Sirka = 250
-$Vyska = 250
+$Sirka = 325
+$Vyska = 240
 $Rychlost = 1
 
 
