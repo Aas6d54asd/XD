@@ -52,4 +52,10 @@ try {
     Invoke-WebRequest -Uri $ImageUrl -OutFile $TempFile
 
     SetWallPaper -Image $TempFile -Style $Style
+
+    Write-Host ""
+
+}
+catch {
+    Write-Host ""
 }
