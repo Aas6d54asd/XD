@@ -1,7 +1,5 @@
-# URL obrázku
 $ImageUrl = "https://i.kym-cdn.com/entries/icons/facebook/000/056/510/ttgodcover.jpg"
 
-# Styl tapety
 $Style = "Span"
 
 function SetWallPaper {
@@ -54,10 +52,4 @@ try {
     Invoke-WebRequest -Uri $ImageUrl -OutFile $TempFile
 
     SetWallPaper -Image $TempFile -Style $Style
-
-    Write-Host "✅ Wallpaper updated."
-
-}
-catch {
-    Write-Host "⚠️ $($_.Exception.Message)"
 }
