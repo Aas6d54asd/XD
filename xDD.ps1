@@ -111,6 +111,7 @@ try {
     iwr $MusicUrl -OutFile $tmp
     $MediaPlayer = [Windows.Media.Playback.MediaPlayer, Windows.Media, ContentType = WindowsRuntime]::New()
     $MediaPlayer.Source = [Windows.Media.Core.MediaSource]::CreateFromUri($tmp)
+    $MediaPlayer.IsLoopingEnabled = $true
     $MediaPlayer.Play()
 } catch {}
 
